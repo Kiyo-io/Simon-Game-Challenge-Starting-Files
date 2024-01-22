@@ -1,3 +1,5 @@
+var gamePattern = [];
+
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 function nextSequence() {
@@ -28,4 +30,10 @@ switch (randomNumber) {
 
   default:
     console.error("Oops! Invalid Random Number!");
+}
+
+function addToGamePattern(randomChosenColour) {
+  gamePattern.push(randomChosenColour);
+
+  console.log(gamePattern);
 }
