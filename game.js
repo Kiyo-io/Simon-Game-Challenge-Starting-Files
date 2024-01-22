@@ -6,3 +6,26 @@ function nextSequence() {
 }
 
 nextSequence();
+
+var randomChosenColour;
+
+switch (randomNumber) {
+  case 0:
+    randomChosenColour = buttonColours[0];
+    break;
+
+  case 1:
+    randomChosenColour = buttonColours[1];
+    break;
+
+  case 2:
+    randomChosenColour = buttonColours[2];
+    break;
+
+  case 3:
+    randomChosenColour = buttonColours[3];
+    break;
+
+  default:
+    console.error("Oops! Invalid Random Number!");
+}
