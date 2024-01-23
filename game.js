@@ -1,4 +1,5 @@
-//Step 2
+var userClickedPattern = [];
+
 var gamePattern = [];
 
 var buttonColours = ["red", "blue", "green", "yellow"];
@@ -7,10 +8,10 @@ var randomChosenColour;
 
 // Mapping button colors to audio files
 var audioMap = {
-  red: new Audio("sounds/red.mp3"),
+  red: "sounds/red.mp3",
   blue: "sounds/blue.mp3",
-  green: "sound/green.mp3",
-  yellow: "sound/yellow.mp3",
+  green: "sounds/green.mp3",
+  yellow: "sounds/yellow.mp3",
 };
 
 // Function to play audio for a specific button color
@@ -63,3 +64,16 @@ function nextSequence() {
 }
 
 nextSequence();
+
+// Seperate Handler/Event Function that detects the user's click on each button
+$(".btn").click(function (event) {
+  var userChosenColour = event.target.id;
+
+  console.log(userChosenColour);
+
+  userClickedPattern.push(userChosenColour);
+
+  console.log(userClickedPattern);
+});
+
+function playSound(params) {}
