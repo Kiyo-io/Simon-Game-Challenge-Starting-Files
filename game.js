@@ -5,7 +5,8 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var randomChosenColour;
 
-//Successful
+//Successful 
+//Switch statement is inside of fucntion so that it can use the result from the randomNumber variable or the inital result of the fucntion otherwise the switch statement won't know what the randomNumber variable is valued as and so cannot continue the the code ie. act on the switch statement
 function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
   console.log(randomNumber);
@@ -31,11 +32,12 @@ function nextSequence() {
     default:
       console.error("Oops! Invalid Random Number!");
   }
+  console.log(randomChosenColour);
 }
 
 nextSequence();
 
-console.log('Random Chosen Colour:', randomChosenColour);
+
 
 
 switch (randomNumber) {
