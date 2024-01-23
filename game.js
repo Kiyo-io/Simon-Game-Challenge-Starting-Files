@@ -1,7 +1,8 @@
+//Step 2
 var gamePattern = [];
-
+//Successful
 var buttonColours = ["red", "blue", "green", "yellow"];
-
+//Successful
 function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
   console.log(randomNumber);
@@ -37,3 +38,20 @@ function addToGamePattern(randomChosenColour) {
 
   console.log(gamePattern);
 }
+
+//jQuery Step 3
+
+function (randomChosenColour) {
+  $("#red").delay(100).fadeOut().fadeIn("slow");
+};
+
+$("#blue").delay(100).fadeOut().fadeIn("slow");
+
+$("#yellow").delay(100).fadeOut().fadeIn("slow");
+
+$("#green").delay(100).fadeOut().fadeIn("slow");
+
+
+// $("#red").click(
+// var redAudio = new Audio("sounds/red.mp3");
+// redAudio.play();
