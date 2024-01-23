@@ -50,14 +50,25 @@ function nextSequence() {
 
   console.log(gamePattern);
 
-  //jQuery Step 3 this selects the ids in the html and applies the result of the random color chosen triggering the relevant button in HTML
+  //jQuery Step 3 this selects the ids in the html and prompted with the result of the random color chosen triggers the relevant button in HTML to flash
   $("#" + randomChosenColour)
     .delay(100)
     .fadeOut()
     .fadeIn("slow");
 }
 
-nextSequence();
+// START GAME FUNCTION
+// detects the correct key press to start the Game UI function called nextSequence
+$(document).keydown(function start(event) {
+  if (event.key === "a") {
+    nextSequence();
+  } else {
+    alert(
+      "Oops! Wrong Key 😣 Press A Key to Start Playing with the Simon Says AI!"
+    );
+    console.log(event.key);
+  }
+});
 
 // DETECTING USER CLICK
 // Seperate Handler/Event Function that detects the user's click on each button
@@ -70,8 +81,9 @@ $(".btn").click(function (event) {
 
   console.log(userClickedPattern);
 });
+
 // USER CLICK Switch
-// Handler/Event Function that detects users click and plays corresponding sound based on click. Key =target id
+// Handler/Event Function that detects users click and plays corresponding sound and an animation---sound based on click. Key =target id
 
 $(".btn").click(function (event) {
   switch (event.target.id) {
@@ -129,5 +141,3 @@ $(".btn").click(function (event) {
       break;
   }
 });
-
-// on click event add pressed class to the btn that was pressed
