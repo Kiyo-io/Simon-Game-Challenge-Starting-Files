@@ -1,3 +1,4 @@
+// VARIABLES FOR FUNCTIONS
 var userClickedPattern = [];
 
 var gamePattern = [];
@@ -6,8 +7,8 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var randomChosenColour;
 
-//Successful
-// Switch statement to set randomChosenColour
+// GAME UI
+// Switch statement to set randomChosenColour and play corresponding sound for color
 //Switch statement is inside of fucntion so that it can use the result from the randomNumber variable ie. the inital result of the fucntion otherwise the switch statement won't know what the randomNumber variable is valued as if the function is and so cannot continue the the code ie. act on the switch statement
 function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
@@ -58,6 +59,7 @@ function nextSequence() {
 
 nextSequence();
 
+// DETECTING USER CLICK
 // Seperate Handler/Event Function that detects the user's click on each button
 $(".btn").click(function (event) {
   var userChosenColour = event.target.id;
@@ -68,7 +70,7 @@ $(".btn").click(function (event) {
 
   console.log(userClickedPattern);
 });
-
+// USER CLICK SOUND
 // Handler/Event Function that detects users click and plays corresponding sound based on click. Key =target id
 
 $(".btn").click(function (event) {
@@ -103,3 +105,5 @@ $(".btn").click(function (event) {
       break;
   }
 });
+
+//　ADDING ANIMATIONS
