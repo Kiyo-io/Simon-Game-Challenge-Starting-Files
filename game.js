@@ -17,18 +17,27 @@ function nextSequence() {
   switch (randomNumber) {
     case 0:
       randomChosenColour = buttonColours[0];
+      var redBtn = new Audio("sounds/red.mp3");
+      redBtn.play();
       break;
 
     case 1:
       randomChosenColour = buttonColours[1];
+      var blueBtn = new Audio("sounds/blue.mp3");
+      blueBtn.play();
+
       break;
 
     case 2:
       randomChosenColour = buttonColours[2];
+      var greenBtn = new Audio("sounds/green.mp3");
+      greenBtn.play();
       break;
 
     case 3:
       randomChosenColour = buttonColours[3];
+      var yellowBtn = new Audio("sounds/yellow.mp3");
+      yellowBtn.play();
       break;
 
     default:
