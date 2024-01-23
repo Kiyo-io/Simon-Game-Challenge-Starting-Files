@@ -37,22 +37,26 @@ function nextSequence() {
   gamePattern.push(randomChosenColour);
 
   console.log(gamePattern);
+
+  $("#" + randomChosenColour)
+    .delay(100)
+    .fadeOut()
+    .fadeIn("slow");
 }
 
 nextSequence();
 
 //jQuery Step 3
 
-// function (randomChosenColour) {
-//   $("#red").delay(100).fadeOut().fadeIn("slow");
-// };
+// function flashAnimation(randomChosenColour) {
+//   $("#" + randomChosenColour).delay(100).fadeOut().fadeIn("slow");
 
-// $("#blue").delay(100).fadeOut().fadeIn("slow");
+//   $("#blue").delay(100).fadeOut().fadeIn("slow");
 
-// $("#yellow").delay(100).fadeOut().fadeIn("slow");
+//   $("#yellow").delay(100).fadeOut().fadeIn("slow");
 
-// $("#green").delay(100).fadeOut().fadeIn("slow");
-
+//   $("#green").delay(100).fadeOut().fadeIn("slow");
+// }
 // $("#red").click(
 // var redAudio = new Audio("sounds/red.mp3");
 // redAudio.play();
