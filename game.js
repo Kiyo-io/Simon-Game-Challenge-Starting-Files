@@ -70,31 +70,55 @@ $(".btn").click(function (event) {
 
   console.log(userClickedPattern);
 });
-// USER CLICK SOUND
+// USER CLICK Switch
 // Handler/Event Function that detects users click and plays corresponding sound based on click. Key =target id
 
 $(".btn").click(function (event) {
   switch (event.target.id) {
     case "red":
+      // SOUND ON USER CLICK
       var redBtn = new Audio("sounds/red.mp3");
       redBtn.play();
+      //　ADDING ANIMATIONS FOR USER CLICKS
+      $("#red").addClass("pressed");
+      setTimeout(function () {
+        $(".btn").removeClass("pressed");
+      }, 100);
 
       break;
 
     case "green":
       var greenBtn = new Audio("sounds/green.mp3");
       greenBtn.play();
+
+      $("#green").addClass("pressed");
+
+      setTimeout(function () {
+        $(".btn").removeClass("pressed");
+      }, 100);
       break;
 
     case "yellow":
       var yellowBtn = new Audio("sounds/yellow.mp3");
       yellowBtn.play();
 
+      $("#yellow").addClass("pressed");
+
+      setTimeout(function () {
+        $(".btn").removeClass("pressed");
+      }, 100);
+
       break;
 
     case "blue":
       var blueBtn = new Audio("sounds/blue.mp3");
       blueBtn.play();
+
+      $("#blue").addClass("pressed");
+
+      setTimeout(function () {
+        $(".btn").removeClass("pressed");
+      }, 100);
 
       break;
 
@@ -106,4 +130,4 @@ $(".btn").click(function (event) {
   }
 });
 
-//　ADDING ANIMATIONS
+// on click event add pressed class to the btn that was pressed
