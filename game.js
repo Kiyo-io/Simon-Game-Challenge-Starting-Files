@@ -7,6 +7,8 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var randomChosenColour;
 
+var level = 0;
+
 // GAME UI
 // Switch statement to set randomChosenColour and play corresponding sound for color
 //Switch statement is inside of fucntion so that it can use the result from the randomNumber variable ie. the inital result of the fucntion otherwise the switch statement won't know what the randomNumber variable is valued as if the function is and so cannot continue the the code ie. act on the switch statement
@@ -55,6 +57,8 @@ function nextSequence() {
     .delay(100)
     .fadeOut()
     .fadeIn("slow");
+
+  $("h1").text("Level " + level);
 }
 
 // START GAME FUNCTION
@@ -62,6 +66,7 @@ function nextSequence() {
 $(document).keydown(function start(event) {
   if (event.key === "a") {
     nextSequence();
+    level++;
   } else {
     alert(
       "Oops! Wrong Key 😣 Press A Key to Start Playing with the Simon Says AI!"
