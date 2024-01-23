@@ -6,19 +6,6 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var randomChosenColour;
 
-// Mapping button colors to audio files
-var audioMap = {
-  red: "sounds/red.mp3",
-  blue: "sounds/blue.mp3",
-  green: "sounds/green.mp3",
-  yellow: "sounds/yellow.mp3",
-};
-
-// Function to play audio for a specific button color
-function playAudio(color) {
-  var audio = new Audio(audioMap[color]);
-  audio.play();
-}
 //Successful
 // Switch statement to set randomChosenColour
 //Switch statement is inside of fucntion so that it can use the result from the randomNumber variable ie. the inital result of the fucntion otherwise the switch statement won't know what the randomNumber variable is valued as if the function is and so cannot continue the the code ie. act on the switch statement
@@ -53,9 +40,6 @@ function nextSequence() {
 
   console.log(gamePattern);
 
-  // Play audio for the chosen color
-  playAudio(randomChosenColour);
-
   //jQuery Step 3 this selects the ids in the html and applies the result of the random color chosen triggering the relevant button in HTML
   $("#" + randomChosenColour)
     .delay(100)
@@ -76,4 +60,37 @@ $(".btn").click(function (event) {
   console.log(userClickedPattern);
 });
 
-function playSound(params) {}
+// Handler/Event Function that detects users click and plays corresponding sound based on click. Key =target id
+
+$(".btn").click(function (event) {
+  switch (event.target.id) {
+    case "red":
+      var redBtn = new Audio("sounds/red.mp3");
+      redBtn.play();
+
+      break;
+
+    case "green":
+      var greenBtn = new Audio("sounds/green.mp3");
+      greenBtn.play();
+      break;
+
+    case "yellow":
+      var yellowBtn = new Audio("sounds/yellow.mp3");
+      yellowBtn.play();
+
+      break;
+
+    case "blue":
+      var blueBtn = new Audio("sounds/blue.mp3");
+      blueBtn.play();
+
+      break;
+
+    default:
+      var wrongBtn = new Audio("sounds/wrong.mp3");
+      wrongBtn.play();
+
+      break;
+  }
+});
