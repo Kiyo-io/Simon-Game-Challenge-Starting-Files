@@ -1,3 +1,7 @@
+//CURRENTLY ON STEP 8 IN PROJECT TO FINALIZE
+//1.LOOP nextSequence to play after user correctly repeats gamepasttern asrray
+//the users pattern is stored in user userClickedPattern so game pattern and userpattern must be compared and equal each other before game repeats the game pattern array via animations with an added level and added randomchosencolor
+
 // VARIABLES FOR FUNCTIONS
 var userClickedPattern = [];
 
@@ -8,6 +12,8 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var randomChosenColour;
 
 var level = 0;
+
+var currentlevel = level;
 
 // GAME UI
 // Switch statement to set randomChosenColour and play corresponding sound for color
@@ -101,7 +107,8 @@ $(".btn").click(function (event) {
       setTimeout(function () {
         $(".btn").removeClass("pressed");
       }, 100);
-
+      // NEXT LEVEL AFTER USER CLICK
+      checkAnswer();
       break;
 
     case "green":
@@ -113,6 +120,7 @@ $(".btn").click(function (event) {
       setTimeout(function () {
         $(".btn").removeClass("pressed");
       }, 100);
+      checkAnswer();
       break;
 
     case "yellow":
@@ -124,7 +132,7 @@ $(".btn").click(function (event) {
       setTimeout(function () {
         $(".btn").removeClass("pressed");
       }, 100);
-
+      checkAnswer();
       break;
 
     case "blue":
@@ -136,7 +144,7 @@ $(".btn").click(function (event) {
       setTimeout(function () {
         $(".btn").removeClass("pressed");
       }, 100);
-
+      checkAnswer();
       break;
 
     default:
@@ -146,3 +154,11 @@ $(".btn").click(function (event) {
       break;
   }
 });
+
+function checkAnswer(currentlevel) {
+  if (userClickedPattern === gamePattern) {
+    console.log("success");
+  } else {
+    console.log("wrong");
+  }
+}
